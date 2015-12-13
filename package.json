@@ -1,0 +1,14 @@
+{
+    "name": "HTML5 Video",
+    "version": "1.0.0",
+    "description": "HTML5 video player with scrubber",
+    "author": "Jasper Zuyderwijk",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-uglify": "latest",
+        "grunt-autoprefixer": "^1.0.1",
+        "grunt-contrib-cssmin": "latest",
+        "grunt-contrib-sass": "^0.8.1",
+        "grunt-contrib-watch": "^0.6.1"
+    }
+}

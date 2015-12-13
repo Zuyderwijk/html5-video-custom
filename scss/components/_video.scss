@@ -1,0 +1,114 @@
+body {
+    background-color: #222;
+}
+.container {
+    width: 640px;
+    margin: 0 auto;
+
+    .progress-bar {
+        position: relative;
+        height: 20px;
+        progress {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: #ffffff;
+            &::-webkit-progress-bar {
+                background-color: #ffffff;
+            }
+            &::-webkit-progress-value {
+                background-color: #dd1144;
+            }
+        }
+
+        .markers {
+            position: absolute;
+            list-style-type: none;
+            width: auto;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            right: 0;
+            li {
+                position: relative;
+                display: block;
+                float: left;
+                height: 100%;
+                width: 4px;
+                margin-right: 10px;
+                background-color: yellow;
+                cursor: pointer;
+                transition: 0.2s all ease;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: yellow;
+                    height: 0;
+                    width: 4px;
+                    visibility: hidden;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                &:after {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: -40px;
+                    left: -50px;
+                    width: 0px;
+                    height: 18px;
+                    padding: 0 5px 2px;
+                    color: #ffffff;
+                    border-bottom: 4px solid yellow;
+                    visibility: hidden;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    opacity: 0;
+                }
+                &:hover {
+                    &:before {
+                        height: 20px;
+                        top: -20px;
+                        transition: 0.2s all ease;
+                        visibility: visible;
+                    }
+                    &:after {
+                        width: 90px;
+                        opacity: 1;
+                        transition: 0.2s all ease;
+                        transition-delay: 0.2s;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    .scrubber {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        top: 0;
+        margin-left: -13px;
+        margin-top: -3px;
+        border-radius: 100%;
+        background-color: #dd1144;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: 4px solid #ffffff;
+        z-index: 10;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .controls {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
